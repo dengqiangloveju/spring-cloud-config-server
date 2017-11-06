@@ -1,0 +1,42 @@
+server:
+  port: 8080
+  
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/dengqiangloveju/spring-cloud-config
+          search-paths:
+            - config-file 
+            - config-drunk  
+          username: 772010988@qq.com
+          password: 1987116m
+      label: master
+  
+  application:
+    name: config-server
+    
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: http://drunk:123456@localhost:8761/eureka/
+  #instance: 
+   # instanceId: spring.application.name:{random.value}
+    #prefer-ip-address: true
+
+security: 
+  basic: 
+    enabled: true 
+  user: 
+    name: lamic
+    password: lamic
+
+#encrypt:
+#  key: foo
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: letmein
+    alias: mytestkey
+    secret: changeme

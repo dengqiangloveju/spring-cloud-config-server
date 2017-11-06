@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/dengqiangloveju/{application}
+          username: 772010988@qq.com
+          password: 1987116m
+      label: master
+  
+  application:
+    name: config-server
